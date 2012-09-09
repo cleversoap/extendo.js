@@ -1,10 +1,10 @@
-// Last
+//  Retrieves the last element of the array
 Array.prototype.last = function ()
 {
     return this[this.length - 1];
 };
 
-// COUNT
+//  Counts the number of times a value occurs in the array
 Array.prototype.count = function (val)
 {
     var cnt = 0;
@@ -27,27 +27,25 @@ Array.prototype.count = function (val)
     return cnt;
 };
 
-// REMOVAL
-
-// Remove element at
+//  Removes the element at the specified index in the array
 Array.prototype.removeAt = function (idx)
 {
     this.splice(idx,1);
 };
 
-// Remove first
+//  Remove the first element that contains the specified value
 Array.prototype.removeFirst = function (val)
 {
     this.removeAt(this.indexOf(val));
 };
 
-// Remove last
+//  Remove the last element that contains the specified value
 Array.prototype.removeLast = function (val)
 {
     this.removeAt(this.lastIndexOf(val));
 };
 
-// Remove all elements with value
+//  Remove all elements with value
 Array.prototype.removeAll = function (val)
 {
     while(this.indexOf(val) >= 0)
@@ -58,7 +56,7 @@ Array.prototype.removeAll = function (val)
     return this.length;
 };
 
-// Remove nth instance of element
+//  Remove nth element with value
 Array.prototype.removeNth = function (val, n)
 {
     var cidx = 0;
