@@ -35,6 +35,18 @@ Array.prototype.removeAt = function (idx)
     this.splice(idx,1);
 };
 
+// Remove first
+Array.prototype.removeFirst = function (val)
+{
+    this.removeAt(this.indexOf(val));
+};
+
+// Remove last
+Array.prototype.removeLast = function (val)
+{
+    this.removeAt(this.lastIndexOf(val));
+};
+
 // Remove all elements with value
 Array.prototype.removeAll = function (val)
 {
@@ -45,6 +57,22 @@ Array.prototype.removeAll = function (val)
 };
 
 // Remove nth instance of element
-Array.prototype.removeNth = function (val)
+Array.prototype.removeNth = function (val, n)
 {
+    var cidx = 0;
+    for (var i = 0; i < this.length; ++i)
+    {
+        if (this[i] === val)
+        {
+            if (cidx === n)
+            {
+                this.removeAt(i);
+                break;
+            }
+            else
+            {
+                cidx++;
+            }
+        }
+    }
 };
