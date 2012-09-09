@@ -54,6 +54,8 @@ Array.prototype.removeAll = function (val)
     {
         this.removeAt(this.indexOf(val));
     }
+
+    return this.length;
 };
 
 // Remove nth instance of element
