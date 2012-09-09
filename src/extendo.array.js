@@ -32,11 +32,16 @@ Array.prototype.count = function (val)
 // Remove element at
 Array.prototype.removeAt = function (idx)
 {
+    this.splice(idx,1);
 };
 
 // Remove all elements with value
 Array.prototype.removeAll = function (val)
 {
+    while(this.indexOf(val) >= 0)
+    {
+        this.removeAt(this.indexOf(val));
+    }
 };
 
 // Remove nth instance of element
